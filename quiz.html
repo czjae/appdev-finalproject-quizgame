@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Blitz - Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/auth.js"></script>
+  <script>requireLogin();</script>
+</head>
+<body>
+  <div class="screen">
+    <div class="top">
+      <span id="progress"></span>
+      <span id="timer"></span>
+    </div>
+    <h2 id="question"></h2>
+    <div id="choices"></div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

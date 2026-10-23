@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Blitz - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/auth.js"></script>
+  <script>requireLogin();</script>
+</head>
+<body>
+  <div class="screen">
+    <div class="top">
+      <span id="welcome"></span>
+      <button class="logout" id="logoutBtn">Logout</button>
+    </div>
+
+    <img src="logo-orange.svg" class="logo" alt="Quiz Blitz">
+    <p class="big">High score: <b id="highScore">0</b></p>
+
+    <label>Category</label>
+    <select id="category"></select>
+
+    <label>Difficulty</label>
+    <div id="difficulty">
+      <button class="diff selected" data-level="easy">Easy</button>
+      <button class="diff" data-level="medium">Medium</button>
+      <button class="diff" data-level="hard">Hard</button>
+    </div>
+
+    <button id="startBtn">Start</button>
+    <p id="message"></p>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

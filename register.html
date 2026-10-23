@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Blitz - Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="screen">
+    <img src="logo-orange.svg" class="logo" alt="Quiz Blitz">
+    <h2>Gumawa ng account</h2>
+
+    <label>Username</label>
+    <input id="username" type="text" autocomplete="username">
+
+    <label>Password</label>
+    <input id="password" type="password" autocomplete="new-password">
+
+    <label>Confirm password</label>
+    <input id="confirm" type="password" autocomplete="new-password">
+
+    <button id="registerBtn">Register</button>
+    <p id="message"></p>
+    <p class="link">May account na? <a href="login.html">Mag-login</a></p>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script>
+    document.getElementById("registerBtn").addEventListener("click", () => {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+      const c = document.getElementById("confirm").value;
+      const error = registerUser(u, p, c);
+
+      if (error) {
+        document.getElementById("message").textContent = error;
+        return;
+      }
+      alert("Na-register na! Mag-login ka na.");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

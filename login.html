@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Blitz - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="screen">
+    <img src="logo-orange.svg" class="logo" alt="Quiz Blitz">
+    <h2>Login</h2>
+
+    <label>Username</label>
+    <input id="username" type="text" autocomplete="username">
+
+    <label>Password</label>
+    <input id="password" type="password" autocomplete="current-password">
+
+    <button id="loginBtn">Login</button>
+    <p id="message"></p>
+    <p class="link">Wala pang account? <a href="register.html">Mag-register</a></p>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script>
+    if (currentUser()) window.location.href = "homescreen.html";
+
+    function doLogin() {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+      if (loginUser(u, p)) {
+        window.location.href = "homescreen.html";
+      } else {
+        document.getElementById("message").textContent = "Mali ang username o password.";
+      }
+    }
+
+    document.getElementById("loginBtn").addEventListener("click", doLogin);
+    document.getElementById("password").addEventListener("keydown", e => {
+      if (e.key === "Enter") doLogin();
+    });
+  </script>
+</body>
+</html>
